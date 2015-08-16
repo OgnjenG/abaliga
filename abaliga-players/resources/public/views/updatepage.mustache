@@ -1,0 +1,25 @@
+{{> header}}
+
+<form method="get">
+Id: <input type="text" name="id"></br>
+Name: <input type="text" name="name"></br>
+Club: <select>
+		{{#clubs}}
+			<option value="{{id}}">{{name}}</option>
+		{{/clubs}}
+	  </select></br>
+
+Height: <input type="text" name="height"></br>
+Position: <select>
+  			<option value="PG">PG</option>
+  			<option value="SG">SG</option>
+ 			<option value="SF">SF</option>
+  			<option value="PF">PF</option>
+  			<option value="C">C</option>
+		  </select></br>
+Nationality: <input type="text" name="nationality"></br>
+Date of birth: <input type="date" name="dateofbirth"></br>
+<input type="submit" name="insertPlayerButton" value="Insert player">
+</form>
+
+{{> footer}}
