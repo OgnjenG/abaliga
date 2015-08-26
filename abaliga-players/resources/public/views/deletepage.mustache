@@ -1,8 +1,12 @@
 {{> header}}
 
-<form method="get">
+<form method="post" action="/deletePlayer">
 Id: <input type="text" name="id"></br>
-<input type="submit" name="deletePlayerButton" value="Delete player">
+<input type="submit" value="Delete player">
+{{{token}}}
 </form>
+{{#message}}
+ Player is successfully deleted.
+{{/message}}
 
 {{> footer}}

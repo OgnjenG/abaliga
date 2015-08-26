@@ -7,7 +7,9 @@
                  [ring/ring-defaults "0.1.2"]
                  [de.ubercode.clostache/clostache "1.4.0"]
                  [org.clojure/java.jdbc "0.4.1"]
-                 [postgresql "9.3-1102.jdbc41"]]
+                 [postgresql "9.3-1102.jdbc41"]
+                 [ring/ring-anti-forgery "1.0.0"]
+                 [clj-time "0.11.0"]]
   :plugins [[lein-ring "0.8.13"]
             [lein2-eclipse "2.0.0"]]
   :ring {:handler abaliga-players.handler/app}

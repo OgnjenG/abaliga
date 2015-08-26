@@ -1,3 +1,38 @@
 {{> header}}
 
+<form method="get" action="/searchPlayer">
+Search by name: <input type="text" name="name"></br>
+<input type="submit" name="searchPlayerButton" value="Search for player">
+</form>
+
+{{#showtable}}
+<table border=2 style="width: 707px;">
+  <tr>
+    <th>Id</th>
+    <th>Name</th> 
+    <th>Date of birth</th>
+    <th>Height</th> 
+    <th>Position</th> 
+    <th>Club</th>
+    <th>Nationality</th>  
+  </tr>
+  {{#players}}
+  <tr>
+    <td>{{id}}</td>
+    <td>{{name}}</td> 
+    <td>{{date_of_birth}}</td>
+    <td>{{height}}</td>
+    <td>{{position}}</td>
+    <td>{{clubsname}}</td>
+    <td>{{nationality}}</td>
+  </tr>
+  {{/players}}
+</table>
+{{/showtable}}
+{{#message}}
+{{^showtable}}
+ There are no players with that name.
+{{/showtable}}
+{{/message}}
+
 {{> footer}}

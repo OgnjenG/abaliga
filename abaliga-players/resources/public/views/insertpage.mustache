@@ -1,24 +1,27 @@
 {{> header}}
 
-<form method="get">
-Name: <input type="text" name="name"></br>
-Club: <select>
+<form method="post" action="/insertPlayer">
+Name: <input type="text" name="name" class="insertName"></br>
+Club: <select name="club" class="insertClub">
 		{{#clubs}}
 			<option value="{{id}}">{{name}}</option>
 		{{/clubs}}
 	  </select></br>
-
-Height: <input type="text" name="height"></br>
-Position: <select>
+Height: <input type="text" name="height" class="insertHeight"></br>
+Position: <select name="position" class="insertPosition">
   			<option value="PG">PG</option>
   			<option value="SG">SG</option>
  			<option value="SF">SF</option>
   			<option value="PF">PF</option>
   			<option value="C">C</option>
 		  </select></br>
-Nationality: <input type="text" name="nationality"></br>
-Date of birth: <input type="date" name="dateofbirth"></br>
-<input type="submit" name="button" value="Insert player">
+Nationality: <input type="text" name="nationality" class="insertNationality"></br>
+Date of birth: <input type="date" name="dateofbirth" class="insertDate"></br>
+{{{token}}}
+<input type="submit" value="Insert player" class="insertPlayer">
 </form>
+{{#message}}
+ Player is successfully added to database.
+{{/message}}
 
 {{> footer}}

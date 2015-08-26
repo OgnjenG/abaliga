@@ -16,6 +16,12 @@
   (GET "/insert" [] (maincontroller/insert))
   (GET "/update" [] (maincontroller/update))
   (GET "/delete" [] (maincontroller/delete))
+  (GET "/searchPlayer" [name] (maincontroller/searchPlayer name))
+  (POST "/insertPlayer" [name club height position nationality dateofbirth] 
+       (maincontroller/insertPlayer name height dateofbirth position club nationality))
+  (POST "/updatePlayer" [id name height dateofbirth position club nationality] 
+       (maincontroller/updatePlayer id name height dateofbirth position club nationality))
+  (POST "/deletePlayer" [id] (maincontroller/deletePlayer id))
   (route/resources "/")
   (route/not-found "Not Found"))
 

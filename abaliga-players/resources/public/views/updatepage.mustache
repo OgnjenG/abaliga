@@ -1,16 +1,15 @@
 {{> header}}
 
-<form method="get">
+<form method="post" action="/updatePlayer">
 Id: <input type="text" name="id"></br>
 Name: <input type="text" name="name"></br>
-Club: <select>
+Club: <select name="club">
 		{{#clubs}}
 			<option value="{{id}}">{{name}}</option>
 		{{/clubs}}
 	  </select></br>
-
 Height: <input type="text" name="height"></br>
-Position: <select>
+Position: <select name="position">
   			<option value="PG">PG</option>
   			<option value="SG">SG</option>
  			<option value="SF">SF</option>
@@ -19,7 +18,11 @@ Position: <select>
 		  </select></br>
 Nationality: <input type="text" name="nationality"></br>
 Date of birth: <input type="date" name="dateofbirth"></br>
-<input type="submit" name="insertPlayerButton" value="Insert player">
+{{{token}}}
+<input type="submit" value="Update player">
 </form>
+{{#message}}
+ Player is successfully updated.
+{{/message}}
 
 {{> footer}}
